@@ -10,8 +10,8 @@ const BookList = (books) => {
     //     selectedBook: null
     // }
 
-    const [searchQuery, setSearchQuery ] = useState({})
-    const [selectedBook, setSelectedBook] = useState({})
+    const [searchQuery, setSearchQuery ] = useState()
+    const [selectedBook, setSelectedBook] = useState()
 
         return (
             <Container>
@@ -25,7 +25,7 @@ const BookList = (books) => {
                                         type="text"
                                         placeholder="Search here"
                                         value={searchQuery}
-                                        onChange={e => setSearchQuery({ searchQuery: e.target.value })}
+                                        onChange={e => setSearchQuery(e.target.value )}
                                     />
                                 </Form.Group>
                             </Col>
@@ -38,7 +38,7 @@ const BookList = (books) => {
                                             book={b}
                                             selectedBook={selectedBook}
                                             changeSelectedBook={asin => setSelectedBook({
-                                                selectedBook: asin
+                                                asin
                                             })} />
                                     </Col>
                                 ))
